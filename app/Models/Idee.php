@@ -20,7 +20,7 @@ class Idee extends Model
     public function categorie() {
         return $this->belongsTo(Categorie::class,'categorie_id');
     }
-    public function commentaire() {
+    public function commentaires() {
         return $this->hasMany(Commentaire::class,'idee_id');
     }
 }

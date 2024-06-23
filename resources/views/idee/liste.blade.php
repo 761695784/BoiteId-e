@@ -16,6 +16,12 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{session('status')}}
+        </div>
+    @endif
+
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -35,10 +41,9 @@
                         <td>{{ $idee->auteur_nom_complet }}</td>
                         <td>{{ $idee->created_at}}</td>
                         <td>{{ $idee->categorie->nom }}</td>
-                       <td>  <a href="{{route('details',$idee->id)}}" class="btn btn-info btn-sm">
+                        <td>  <a href="{{route('details',$idee->id)}}" class="btn btn-info btn-sm">
                         <i class="fas fa-eye"></i>
-                    </a></td>
-
+                         </a></td>
                     </tr>
                 @endforeach
             </tbody>
