@@ -34,10 +34,7 @@
         <i class="fas fa-trash-alt"></i> Supprimer
     </a></td>
 
-    {{-- <p  class="badge text-bg-dark"  ><strong>Publié le :</strong> {{ $articles->PublicationDate }}</p>
-    @if($articles->statut)
-        <span class="badge bg-success">À la une</span><br>
-    @endif<br> --}}
+ 
    <h2>Commentaires</h2>
     @foreach($idees->commentaires as $commentaire)
         <div class="card mb-2">

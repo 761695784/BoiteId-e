@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Idee;
+use App\Models\EmailLog;
 use App\Mail\approbation;
 use App\Models\Categorie;
 use App\Mail\inapprobation;
@@ -85,23 +86,31 @@ class IdeeController extends Controller
 
         if ($action == 'approuvée') {
             Mail::to($idee->auteur_email)->send(new approbation($idee));
+            $this->logEmail($idee->id, $idee->auteur_email, 'approuvée');
             return back()->with('success', 'Idée approuvée et email envoyé');
         } elseif ($action == 'inapprouvée') {
             Mail::to($idee->auteur_email)->send(new inapprobation($idee));
+            $this->logEmail($idee->id, $idee->auteur_email, 'inapprouvée');
             return back()->with('success', 'Idée rejetée et email envoyé');
         }
 
         return back()->with('error', 'Action non reconnue');
     }
 
-    // public function detail($id)
-    // {
-    //     // Récupération de la candidature par son ID avec les relations
-    //     $candidature = Candidature::with('candidat')->findOrFail($id);
+    public function logEmail($ideeId, $email, $action)
+    {
+        EmailLog::create([
+            'idee_id' => $ideeId,
+            'auteur_email' => $email,
+            'action' => $action,
+            'sent_at' => now(),
+        ]);
+    }
 
-    //     // Affichage de la vue 'candidatures.detail' avec les détails de la candidature
-    //     return view('candidatures.detail', compact('candidature'));
-    // }
-
+    public function emailLogs()
+    {
+        $emailLogs = EmailLog::with('idee')->get();
+        return view('admin.email_logs', compact('emailLogs'));
+    }
 
 }
