@@ -29,6 +29,11 @@
                 @if ($idees->isEmpty())
                     <p>Aucune idée n'a été proposée.</p>
                 @else
+                <form action="{{ route('logout') }}" method="POST" class="d-flex">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Deconnexion</button>
+                </form>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>

@@ -18,13 +18,19 @@
 
 <div class="container mt-5">
     <a href="/liste" class="#"><i class="fas fa-arrow-left"></i></a><br><br>
-
+    <form action="{{ route('logout') }}" method="POST" class="d-flex">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger" type="submit">Deconnexion</button>
+    </form>
     <p>Titre : <strong>{{ $idees->titre }} </strong></p>
     <p>description :  <strong>{{ $idees->description }}</strong></p>
     <p> Proposé par : <strong>{{ $idees->auteur_nom_complet }}</strong></p>
     <p><strong>{{ $idees->auteur_email }} </strong></p>
     <p> Catégorie : <strong>{{ $idees->categorie->nom }}</strong> </p>
     <p> Publié le : <strong>{{ $idees->created_at }}</strong> </p>
+
+    @auth
     <td> <a href="{{route('modifier',$idees->id)}} " class="btn btn-primary btn-sm">
 
         <i class="fas fa-edit"></i> Modifier
@@ -34,7 +40,10 @@
         <i class="fas fa-trash-alt"></i> Supprimer
     </a></td>
 
- 
+
+
+    @endauth
+
    <h2>Commentaires</h2>
     @foreach($idees->commentaires as $commentaire)
         <div class="card mb-2">
@@ -43,11 +52,6 @@
                 <p><strong> {{ $commentaire->auteur_nom_complet }}</strong> </p>
                 <p>{{ $commentaire->description }}</p>
                 <p class="badge text-bg-warning" ><strong>Publié le:</strong> {{ $commentaire->created_at }}</p><br>
-
-                {{-- <a href="#" class="btn btn-primary">Modifier</a>
-             {{route('comments.edit',$comment->id)}}
-                <a href="#" class="btn btn-danger">Supprimer</a>
-             {{route('comments.destroy',$comment->id)}} --}}
             </div>
         </div>
     @endforeach
