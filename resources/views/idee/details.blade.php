@@ -18,11 +18,6 @@
 
 <div class="container mt-5">
     <a href="/liste" class="#"><i class="fas fa-arrow-left"></i></a><br><br>
-    <form action="{{ route('logout') }}" method="POST" class="d-flex">
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger" type="submit">Deconnexion</button>
-    </form>
     <p>Titre : <strong>{{ $idees->titre }} </strong></p>
     <p>description :  <strong>{{ $idees->description }}</strong></p>
     <p> Proposé par : <strong>{{ $idees->auteur_nom_complet }}</strong></p>
@@ -39,10 +34,8 @@
 
         <i class="fas fa-trash-alt"></i> Supprimer
     </a></td>
-
-
-
     @endauth
+    <br> <br>  <br>
 
    <h2>Commentaires</h2>
     @foreach($idees->commentaires as $commentaire)

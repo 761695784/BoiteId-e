@@ -25,7 +25,7 @@
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">description</label>
-            <textarea type="text" class="form-control  @error('description') is-invalid @enderror " name="description"  rows="20" placeholder="Entrez la description de votre idée" value="{{ old('description') }}"></textarea>
+            <textarea type="text" class="form-control  @error('description') is-invalid @enderror " name="description"  rows="20" placeholder="Entrez la description de votre idée" >{{ old('description') }}</textarea>
             @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror

@@ -40,7 +40,18 @@
     @endif
 <div class="container mt-5 text-center">
         <a href="/ajouter" class="btn btn-add">Ajouter</a>
+        @auth
+        <form action="{{ route('logout') }}" method="POST" class="d-flex">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit">Deconnexion</button>
+        </form>
+        <a href="/index" class="btn btn-add">Index</a>
+        <a href="/email-logs" class="btn btn-add">Historique des etats </a>
+        @else
         <a href="/login" class="btn btn-add">Connexion</a>
+
+        @endauth
     </div>
     <hr>
     <!-- Inclure Bootstrap JS (optionnel) -->

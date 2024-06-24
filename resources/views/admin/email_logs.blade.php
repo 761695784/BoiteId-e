@@ -23,7 +23,7 @@
                 @foreach ($emailLogs as $log)
                     <tr>
                         <td>{{ $log->id }}</td>
-                        <td>{{ $log->idee->titre }}</td>
+                        <td>{{ $log->idee ? $log->idee->titre : 'Idée non trouvée' }}</td>
                         <td>{{ $log->auteur_email }}</td>
                         <td>{{ $log->action }}</td>
                         <td>{{ $log->sent_at }}</td>
