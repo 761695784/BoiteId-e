@@ -6,9 +6,7 @@ use App\Http\Controllers\IdeeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CommentaireController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 
@@ -38,7 +36,7 @@ Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::get('/ajouter', [IdeeController::class, 'ajouter_idee']);
-Route::get('/liste', [IdeeController::class, 'liste']);
+Route::get('/', [IdeeController::class, 'liste']);
 Route::post('/ajouter_traitement', [IdeeController::class, 'ajouter_idee_traitement']);
 Route::get('/details/{id}', [IdeeController::class, 'details'])->name('details');
 

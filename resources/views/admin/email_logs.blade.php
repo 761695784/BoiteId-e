@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1>Logs des Emails</h1>
+        <h1>Historique des Emails </h1>
         <table class="table table-bordered">
             <thead>
                 <tr>

@@ -9,32 +9,59 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Inclusion de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
     <style>
         .table thead th {
             background-color: #1d5ce5;
             color: white;
         }
+        .container-fluid {
+            padding-top: 2rem;
+            margin-left: -6rem;
+
+        }
+        .logout-btn {
+            position: absolute;
+            top: 1rem;
+            right: 5rem;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .table-container {
+            width: 100%;
+            max-width: 1200px;
+        }
+        h1 {
+            text-align: center;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="logout-btn">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit">Déconnexion</button>
+            </form>
+        </div>
+        <div class="row justify-content-center">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main-content">
                 @if (session('success'))
-                <div class="alert alert-success">
-                    {{session('success')}}
+                <div class="alert alert-success w-100">
+                    {{ session('success') }}
                 </div>
-            @endif
+                @endif
                 <h1 class="mt-4">Liste des Idées</h1>
                 @if ($idees->isEmpty())
                     <p>Aucune idée n'a été proposée.</p>
                 @else
-                <form action="{{ route('logout') }}" method="POST" class="d-flex">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger" type="submit">Deconnexion</button>
-                </form>
-                    <div class="table-responsive">
+                    <div class="table-responsive table-container mt-4">
                         <table class="table table-striped table-sm">
                             <thead>
                                 <tr>

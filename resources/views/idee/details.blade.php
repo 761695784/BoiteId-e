@@ -28,11 +28,11 @@
     @auth
     <td> <a href="{{route('modifier',$idees->id)}} " class="btn btn-primary btn-sm">
 
-        <i class="fas fa-edit"></i> Modifier
+        <i class="fas fa-edit"></i> 
     </a></td>
     <td> <a href="{{route('suppression',$idees->id)}}" class="btn btn-danger btn-sm">
 
-        <i class="fas fa-trash-alt"></i> Supprimer
+        <i class="fas fa-trash-alt"></i>
     </a></td>
     @endauth
     <br> <br>  <br>
