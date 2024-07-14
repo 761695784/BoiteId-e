@@ -28,7 +28,7 @@
     @auth
     <td> <a href="{{route('modifier',$idees->id)}} " class="btn btn-primary btn-sm">
 
-        <i class="fas fa-edit"></i> 
+        <i class="fas fa-edit"></i>
     </a></td>
     <td> <a href="{{route('suppression',$idees->id)}}" class="btn btn-danger btn-sm">
 
@@ -60,7 +60,7 @@
             <textarea class="form-control" name="description" rows="3" placeholder="Entrer votre commentaire" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
-        <a href="/liste" class="btn btn-danger">Annuler</a>
+        <a href="/" class="btn btn-danger">Annuler</a>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

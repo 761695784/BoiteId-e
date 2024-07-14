@@ -30,7 +30,7 @@
             @enderror
           </div>
           <button type="submit" class="btn btn-primary">Creer</button>
-          <a href="#" class="btn btn-danger">Retour</a>
+          <a href="/" class="btn btn-danger">Retour</a>
         </form>
 
       </div>

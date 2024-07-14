@@ -63,7 +63,7 @@
             </select>
           <br />
           <button type="submit" class="btn btn-primary">Ajouter</button>
-          <a href="/liste" class="btn btn-danger">Retour a la liste</a>
+          <a href="/" class="btn btn-danger">Retour a la liste</a>
         </form>
 
       </div>

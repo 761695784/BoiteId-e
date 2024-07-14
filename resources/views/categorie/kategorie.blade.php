@@ -19,7 +19,7 @@
 
             <h1>Hello, world!</h1> <hr>
             <a href="/ajout_categorie" class="btn btn-primary">Ajouter un categorie</a>
-            <a href="/liste" class="btn btn-warning">Retour</a>
+            <a href="/" class="btn btn-warning">Retour</a>
             <hr>
 
      <table class="table">

@@ -55,7 +55,7 @@
             </select>
           <br />
           <button type="submit" class="btn btn-primary">Modifier</button>
-          <a href="/liste" class="btn btn-danger">Retour a la liste</a>
+          <a href="/" class="btn btn-danger">Retour a la liste</a>
         </form>
 
       </div>
