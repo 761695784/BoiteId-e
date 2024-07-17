@@ -15,11 +15,6 @@
                 {{session('status')}}
             </div>
         @endif
-
-
-
-
-
         <form action="ajouter_categorie_traitement" method="POST">
             @csrf
           <div class="mb-3">

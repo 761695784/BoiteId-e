@@ -41,37 +41,28 @@
 
         <div class="container mt-5 text-center">
             <a href="/ajouter" class="btn btn-add mb-4">Ajouter</a>
-        </div>
-
-        @auth
+        </div> @auth
         <div class="container text-end">
             <a href="/index" class="btn btn-add me-2">Index</a>
             <a href="/kategorie" class="btn btn-add me-2">categorie</a>
             <a href="/email-logs" class="btn btn-add">Historique des états</a>
-            <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                @csrf
+            <form action="{{ route('logout') }}" method="POST" class="d-inline">@csrf
                 @method('DELETE')
                 <button class="btn btn-danger me-2" type="submit">Déconnexion</button>
             </form>
-        </div>
-        @else
+        </div>@else
         <div class="container text-center">
             <a href="/login" class="btn btn-add">Connexion</a>
         </div>
-        @endauth
-
-        <br>
-
+        @endauth <br>
         <table class="table table-bordered">
-            <thead>
-                <tr>
+            <thead><tr>
                     <th>Id</th>
                     <th>Titre</th>
                     <th>Auteur</th>
                     <th>Date de Création</th>
                     <th>Catégorie</th>
-                    <th>Actions</th>
-                </tr>
+                    <th>Actions</th> </tr>
             </thead>
             <tbody>
                 @foreach($idees as $idee)

@@ -17,7 +17,7 @@
 
 
 <div class="container mt-5">
-    <a href="/liste" class="#"><i class="fas fa-arrow-left"></i></a><br><br>
+    <a href="/" class="#"><i class="fas fa-arrow-left"></i></a><br><br>
     <p>Titre : <strong>{{ $idees->titre }} </strong></p>
     <p>description :  <strong>{{ $idees->description }}</strong></p>
     <p> Proposé par : <strong>{{ $idees->auteur_nom_complet }}</strong></p>

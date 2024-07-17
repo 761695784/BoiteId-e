@@ -49,13 +49,13 @@ class IdeeController extends Controller
         $idee->date_creation = $request->date_creation;
         $idee->categorie_id = $request->categorie_id;
         $idee->save();
-        return redirect('/liste')->with('status', 'votre idée a ete enregistré ,nous vous reviendrons pour annoncer l"etat de votre idée.');
+        return redirect('/')->with('status', 'votre idée a ete enregistré ,nous vous reviendrons pour annoncer l"etat de votre idée.');
     }
 
     public function supprimer_idee($id){
         $idee = Idee::find($id);
         $idee->delete();
-        return redirect('/liste')->with('status', 'votre idée a ete supprimé');
+        return redirect('/')->with('status', 'votre idée a ete supprimé');
     }
 
     public function modifier_idee($id){
@@ -72,7 +72,7 @@ class IdeeController extends Controller
         $idee->auteur_email = $request->auteur_email;
         $idee->categorie_id = $request->categorie_id;
         $idee->save();
-        return redirect('/liste')->with('status', 'votre idée a ete modifié');
+        return redirect('/')->with('status', 'votre idée a ete modifié');
     }
 
 
